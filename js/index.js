@@ -92,8 +92,6 @@ function init() {
     controllerGrip2.add(controllerModelFactory.createControllerModel(controllerGrip2));
     scene.add(controllerGrip2);
 
-    //
-
     var geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1)]);
 
     var line = new THREE.Line(geometry);
