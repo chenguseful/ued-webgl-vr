@@ -30,7 +30,6 @@ function init() {
     container = document.getElementById('container');
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100000);
     camera.position.set(2.4, 2.4, 2.4);
@@ -58,6 +57,7 @@ function init() {
     loadModel()
 
     renderer = new THREE.WebGLRenderer({
+        alpha: true,
         antialias: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
