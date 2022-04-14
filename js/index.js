@@ -30,6 +30,7 @@ function init() {
     container = document.getElementById('container');
 
     scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x808080);
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100000);
     camera.position.set(2.4, 2.4, 2.4);
@@ -53,11 +54,11 @@ function init() {
     group = new THREE.Group();
     scene.add(group);
 
-    // 加载模型
+    // 加载场景、模型
+    addSky()
     loadModel()
 
     renderer = new THREE.WebGLRenderer({
-        alpha: true,
         antialias: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -106,12 +107,26 @@ function init() {
 
 }
 
+function addSky() {
+    const texture = new THREE.CubeTextureLoader()
+        .setPath('../images/sky/')
+        .load([
+            'sky.right.jpg', //右(-1,0,0)
+            'sky.left.jpg', //左(1,0,0)
+            'sky.top.jpg', //上(0,1,0)
+            'sky.bottom.jpg', //下(0,-1,0)
+            'sky.front.jpg', //前(0,0,1)
+            'sky.back.jpg' //后(0,0,-1)
+        ]);
+    scene.background = texture
+}
+
 function loadModel() {
     var loader = new GLTFLoader().setPath('../models/island/');
     loader.load('scene.gltf', function (gltf) {
         const obj = gltf.scene
         obj.position.set(0, 2, 0)
-        obj.scale.set(0.4, 0.4, 0.4)
+        obj.scale.set(0.04, 0.04, 0.04)
         scene.add(obj);
     });
 }
