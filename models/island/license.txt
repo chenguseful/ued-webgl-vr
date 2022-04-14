@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lowpoly Floating Island
+* source:	https://sketchfab.com/3d-models/lowpoly-floating-island-03ce6e23198f4f98ac23c0ddcbcabc7d
+* author:	Jtorman (https://sketchfab.com/TRMNJNS)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lowpoly Floating Island" (https://sketchfab.com/3d-models/lowpoly-floating-island-03ce6e23198f4f98ac23c0ddcbcabc7d) by Jtorman (https://sketchfab.com/TRMNJNS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
