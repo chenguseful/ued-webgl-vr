@@ -1,11 +1,11 @@
 Model Information:
-* title:	Low Poly Medieval Island
-* source:	https://sketchfab.com/3d-models/low-poly-medieval-island-361f02265937462a8969d78c5be1fc6c
-* author:	Boooooop (https://sketchfab.com/boooop)
+* title:	Floating DREAM - Sam Clark
+* source:	https://sketchfab.com/3d-models/floating-dream-sam-clark-19737cdb4aea4b9082c5c40b3ad4dd6b
+* author:	sk1nny (https://sketchfab.com/sk1nny)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Low Poly Medieval Island" (https://sketchfab.com/3d-models/low-poly-medieval-island-361f02265937462a8969d78c5be1fc6c) by Boooooop (https://sketchfab.com/boooop) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Floating DREAM - Sam Clark" (https://sketchfab.com/3d-models/floating-dream-sam-clark-19737cdb4aea4b9082c5c40b3ad4dd6b) by sk1nny (https://sketchfab.com/sk1nny) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -33,7 +33,7 @@ function init() {
     scene.background = new THREE.Color(0x808080);
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100000);
-    camera.position.set(2.4, 2.4, 2.4);
+    camera.position.set(2.4, 2.4, 0);
 
     controls = new OrbitControls(camera, container);
     controls.target.set(0, 1.6, 0);
@@ -125,7 +125,7 @@ function loadModel() {
     var loader = new GLTFLoader().setPath('../models/island/');
     loader.load('scene.gltf', function (gltf) {
         const obj = gltf.scene
-        obj.position.set(0, 2, 0)
+        obj.position.set(-4, 0, 0)
         obj.scale.set(0.04, 0.04, 0.04)
         scene.add(obj);
     });
