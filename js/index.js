@@ -51,6 +51,10 @@ function init() {
     light.shadow.mapSize.set(4096, 4096);
     scene.add(light);
 
+    var point = new THREE.PointLight( 0xffffff, 1, 100 );
+    point.position.set( 0, 0, 0 );
+    scene.add( point );
+
     group = new THREE.Group();
     scene.add(group);
 
@@ -122,11 +126,12 @@ function addSky() {
 }
 
 function loadModel() {
-    var loader = new GLTFLoader().setPath('../models/island/');
+    var loader = new GLTFLoader().setPath('../models/gallery/');
     loader.load('scene.gltf', function (gltf) {
         const obj = gltf.scene
-        obj.position.set(-4, 0, 0)
-        obj.scale.set(0.04, 0.04, 0.04)
+        obj.position.set(0, 0, 0)
+        obj.scale.set(1, 1, 1)
+        obj.rotateY(-Math.PI/2)
         scene.add(obj);
     });
 }
