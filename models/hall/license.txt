@@ -1,0 +1,11 @@
+Model Information:
+* title:	Discovery Hall
+* source:	https://sketchfab.com/3d-models/discovery-hall-cc133405960b43c68e769a041ad365fe
+* author:	nickcramer (https://sketchfab.com/nickcramer)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Discovery Hall" (https://sketchfab.com/3d-models/discovery-hall-cc133405960b43c68e769a041ad365fe) by nickcramer (https://sketchfab.com/nickcramer) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

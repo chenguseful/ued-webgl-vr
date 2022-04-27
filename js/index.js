@@ -3,6 +3,9 @@ import {
     OrbitControls
 } from '../plugins/Three/module/jsm/controls/OrbitControls.js';
 import {
+    ColladaLoader
+} from '../plugins/Three/module/jsm/loaders/ColladaLoader.js';
+import {
     GLTFLoader
 } from '../plugins/Three/module/jsm/loaders/GLTFLoader.js';
 import {
@@ -21,6 +24,7 @@ var raycaster, intersected = [];
 var tempMatrix = new THREE.Matrix4();
 
 var controls, group;
+var mixer
 
 init();
 animate();
@@ -51,9 +55,9 @@ function init() {
     light.shadow.mapSize.set(4096, 4096);
     scene.add(light);
 
-    var point = new THREE.PointLight( 0xffffff, 1, 100 );
-    point.position.set( 0, 0, 0 );
-    scene.add( point );
+    var point = new THREE.PointLight(0xffffff, 1, 100);
+    point.position.set(0, 0, 0);
+    scene.add(point);
 
     group = new THREE.Group();
     scene.add(group);
@@ -61,6 +65,16 @@ function init() {
     // 加载场景、模型
     addSky()
     loadModel()
+    loadAnimate()
+
+    var geometry = new THREE.BoxBufferGeometry(0.1, 2, 0.6);
+    var material = new THREE.MeshBasicMaterial({
+        color: '#303030'
+    });
+
+    var mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(-5.3,0.4,2.05)
+    scene.add(mesh)
 
     renderer = new THREE.WebGLRenderer({
         antialias: true
@@ -126,12 +140,30 @@ function addSky() {
 }
 
 function loadModel() {
-    var loader = new GLTFLoader().setPath('../models/gallery/');
+    var loader = new GLTFLoader().setPath('../models/hall/');
     loader.load('scene.gltf', function (gltf) {
         const obj = gltf.scene
         obj.position.set(0, 0, 0)
         obj.scale.set(1, 1, 1)
-        obj.rotateY(-Math.PI/2)
+        obj.rotateY(Math.PI / 2)
+        scene.add(obj);
+    });
+}
+
+function loadAnimate() {
+    var loader = new GLTFLoader();
+    loader.load('../models/animate/scene.gltf', function (gltf) {
+
+        var animations = gltf.animations;
+        var obj = gltf.scene;
+
+        obj.scale.set(0.8, 0.8, 0.8)
+        obj.position.set(-6, 0.4, 0)
+        obj.rotateY(Math.PI / 2)
+
+        mixer = new THREE.AnimationMixer(obj);
+        mixer.clipAction(animations[0]).play();
+
         scene.add(obj);
     });
 }
@@ -179,7 +211,6 @@ function onSelectEnd(event) {
 
     }
 
-
 }
 
 function getIntersections(controller) {
@@ -194,8 +225,6 @@ function getIntersections(controller) {
 }
 
 function intersectObjects(controller) {
-
-    // Do not highlight when already selected
 
     if (controller.userData.selected !== undefined) return;
 
@@ -236,6 +265,7 @@ function animate() {
     renderer.setAnimationLoop(render);
 
 }
+var clock = new THREE.Clock();
 
 function render() {
 
@@ -243,6 +273,14 @@ function render() {
 
     intersectObjects(controller1);
     intersectObjects(controller2);
+
+    var delta = clock.getDelta();
+
+    if (mixer !== undefined) {
+
+        mixer.update(delta);
+
+    }
 
     renderer.render(scene, camera);
 
